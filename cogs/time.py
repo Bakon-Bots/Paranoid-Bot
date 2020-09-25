@@ -6,7 +6,7 @@ class Time(commands.Cog):
   def __init__(self, client):
     self.client = client
 
-  @commands.command(aliases=['mondayyear', 'yearformnow'])
+  @commands.command(aliases=['mondayyear', 'monthdayyearnow'])
   async def mdy(self, ctx): # Month day, year format
     await ctx.send(datetime.strftime(datetime.now(), '%b %d, %Y'))
   @commands.command(aliases=['time', 'timenow'])
