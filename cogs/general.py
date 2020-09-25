@@ -15,7 +15,9 @@ class General(commands.Cog):
 
   @commands.command(aliases=['type', 'typeof'])
   async def tof(self, ctx):
-    if ctx == 'p' or ctx == 'ping': await ctx.send('Function: ping() --returns bots latency.')
+    if ctx == 'p' or ctx == 'ping':
+      await ctx.send('Function: ping() --returns bots latency.')
+      print('yes')
     elif ctx == 'v' or ctx == 'ver' or ctx == 'version': await ctx.send('Function: version() --returns bots version.')
     elif ctx == 'mdy' or ctx == 'mondayyear' or ctx == 'monthdayyearnow': await ctx.send('Function: monthdayyear() --returns the current month day, year')
     elif ctx == 't' or ctx == 'time' or ctx == 'timenow': await ctx.send('Function: time() --returns the current time in Hour:Min:Sec')
