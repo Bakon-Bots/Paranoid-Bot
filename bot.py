@@ -13,9 +13,8 @@ async def on_ready():
 
 @client.event
 async def on_message_delete(message):
-  print(message)
-  message_log = client.get_channel(757793206384721950)
-  await message_log.send(f'\'{message.content}\' was deleted in {message.channel}.')
+    messagelog = client.get_channel(757793206384721950)
+    await messagelog.send(f'\'{message.content}\' was deleted in {message.channel.mention}. Author: {message.author.mention}')
 
 for filename in os.listdir('./cogs'):
   if filename.endswith('.py'):
