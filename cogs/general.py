@@ -7,7 +7,7 @@ class General(commands.Cog):
 
   @commands.command(aliases=['ver', 'version'])
   async def v(self, ctx):
-    await ctx.send('Okay the version is 1.0.0')
+    await ctx.send('Okay the version is 1.0.5')
 
   @commands.command(aliases=['ping'])
   async def p(self, ctx):
