@@ -6,7 +6,7 @@ client = commands.Bot(command_prefix='--')
 
 @client.event
 async def on_ready():
-  print('hello!')
+  print('PyBot loaded!')
 
 for filename in os.listdir('./cogs'):
   if filename.endswith('.py'):
