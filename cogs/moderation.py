@@ -1,6 +1,8 @@
 import discord
 from discord.ext import commands
 
+#TODO: SET ALL MESSAGES TO EMBEDS.
+
 class Moderation(commands.Cog):
   def __init__(self, client):
     self.client = client

@@ -2,6 +2,8 @@ import discord, time
 from discord.ext import commands
 import datetime
 
+#TODO: SET ALL MESSAGES TO EMBEDS.
+
 start_time = time.time()
 
 class General(commands.Cog):

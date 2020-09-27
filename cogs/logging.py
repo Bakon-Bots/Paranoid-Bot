@@ -1,7 +1,7 @@
 import discord
 from discord.ext import commands
 
-
+#TODO: SET ALL MESSAGES TO EMBEDS.
 
 class Logging(commands.Cog):
   def __init__(self, client):
