@@ -8,7 +8,7 @@ __pycache__/
 
 *.env
 *.vscode
-*.txt
+colors.txt
 
 # Distribution / packaging
 .Python
