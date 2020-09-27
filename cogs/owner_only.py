@@ -5,7 +5,7 @@ class Owner_Only(commands.Cog):
   def __init__(self, client):
     self.client = client
 
-  @commands.command(aliases=['c'])
+  @commands.command(aliases=['c'], description='Only for bot owner.')
   async def close(self, ctx):
     if ctx.author.id == 372496578499575828:
       close_em = discord.Embed(title='Closing Connection.', description='WARNING: Closing the bot will shut it down in all servers. Shutting down.', color=0xfc0303)

@@ -8,11 +8,11 @@ class General(commands.Cog):
   def __init__(self, client):
     self.client = client
 
-  @commands.command(aliases=['ver', 'version'])
+  @commands.command(aliases=['ver', 'version'], description='Bots current version')
   async def v(self, ctx):
-    await ctx.send('Bot version: 1.0.5')
+    await ctx.send('Bot version: 1.0.20')
 
-  @commands.command(aliases=['ping'])
+  @commands.command(aliases=['ping'], description='Bots current ping')
   async def p(self, ctx):
     await ctx.send(f'Pong. Bot latency: {round(self.client.latency * 1000)}ms')
 
@@ -20,7 +20,7 @@ class General(commands.Cog):
   #async def ut(self, ctx):
   #  await ctx.send(f'Bot uptime: {self.client.uptime}')
 
-  @commands.command(aliases=['uptm', 'uptime'])
+  @commands.command(aliases=['uptm', 'uptime'], description='Bots uptime.')
   async def ut(self, ctx):
       current_time = time.time()
       difference = int(round(current_time - start_time))
@@ -31,16 +31,6 @@ class General(commands.Cog):
           await ctx.send(embed=embed)
       except discord.HTTPException:
           await ctx.send("Current uptime: " + text)
-
-  @commands.command(aliases=['type', 'typeof'])
-  async def tof(self, ctx, *, arg):
-    if arg == 'p' or arg == 'ping': await ctx.send('Function: ping() --returns bots latency.')
-    elif arg == 'v' or arg == 'ver' or arg == 'version': await ctx.send('Function: version() --returns bots version.')
-    elif arg == 'mdy' or arg == 'mondayyear' or ctx == 'monthdayyearnow': await ctx.send('Function: monthdayyear() --returns the current month day, year')
-    elif arg == 't' or arg == 'time' or arg == 'timenow': await ctx.send('Function: time() --returns the current time in Hour:Min:Sec')
-    elif arg == 'kick': await ctx.send('Function: kick(user, reason) --kicks specified user.')
-    elif arg == 'ban': await ctx.send('Function: ban(user, reason) --bans specified user.')
-    elif arg == 'unban': await ctx.send('Function: unban(user) --unbans specified user.')
   
 def setup(client):
   client.add_cog(General(client))
