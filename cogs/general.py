@@ -1,5 +1,8 @@
-import discord
+import discord, time
 from discord.ext import commands
+import datetime
+
+start_time = time.time()
 
 class General(commands.Cog):
   def __init__(self, client):
@@ -12,6 +15,22 @@ class General(commands.Cog):
   @commands.command(aliases=['ping'])
   async def p(self, ctx):
     await ctx.send(f'Pong. Bot latency: {round(self.client.latency * 1000)}ms')
+
+  #@commands.command(aliases=['uptm', 'uptime'])
+  #async def ut(self, ctx):
+  #  await ctx.send(f'Bot uptime: {self.client.uptime}')
+
+  @commands.command(aliases=['uptm', 'uptime'])
+  async def ut(self, ctx):
+      current_time = time.time()
+      difference = int(round(current_time - start_time))
+      text = str(datetime.timedelta(seconds=difference))
+      embed = discord.Embed(color=0x00fbff)
+      embed.add_field(name="Uptime", value=text)
+      try:
+          await ctx.send(embed=embed)
+      except discord.HTTPException:
+          await ctx.send("Current uptime: " + text)
 
   @commands.command(aliases=['type', 'typeof'])
   async def tof(self, ctx, *, arg):
