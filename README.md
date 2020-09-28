@@ -6,7 +6,7 @@ Currently in development. Expect many many bugs to appear.
 
 
 # Code
-```Python
+```JavaScript
 import discord, time
 from discord.ext import commands
 import datetime
