@@ -33,6 +33,12 @@ class General(commands.Cog):
           await ctx.send(embed=embed)
       except discord.HTTPException:
           await ctx.send("Current uptime: " + text)
+
+  @commands.command(aliases=[])
+  async def update(self, ctx):
+    await ctx.send('Updating bot...')
+    time.sleep(5)
+    await ctx.send('Finished updating. Bots version will not refect that.')
   
 def setup(client):
   client.add_cog(General(client))
