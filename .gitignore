@@ -9,6 +9,9 @@ __pycache__/
 *.env
 *.vscode
 colors.txt
+CODE_OF_CONDUCT.md
+LICENSE
+discordbot.py
 
 # Distribution / packaging
 .Python
