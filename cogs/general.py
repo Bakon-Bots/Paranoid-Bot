@@ -93,8 +93,9 @@ class General(commands.Cog):
         for command in commands_list:
           help_text += f'```{command.name}```\n' \
             f'**{command.description}**\n\n'
-            
-          help_text += f'**Aliases :** `{"`, `".join(command.aliases)}`\n\n' if len(command.aliases) > 0 else help_text += '\n'
+          
+          if len(command.aliases) > 0: help_text += f'**Aliases :** `{"`, `".join(command.aliases)}`\n\n'
+          else: help_text += '\n'
 
           help_text += f'Format: `@{self.client.user.name}#{self.client.user.discriminator}' \
             f' {command.name} {command.usage if command.usage is not None else ""}`\n\n'
