@@ -1,6 +1,6 @@
-# PyBot
+# Paranoid
 
-**PyBot is a newer bot and it is always being worked on. Development may be slow at the start.**
+**Paranoid is a newer bot and it is always being worked on. Development may be slow at the start.**
 
 **The bots prefix is --**
 
