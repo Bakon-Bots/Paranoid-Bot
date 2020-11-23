@@ -11,7 +11,7 @@ class Owner(commands.Cog):
     self.client = client
 
 
-  @commands.command(aliases=['c'], description='Only for bot owner.', brief='Only the bot owner can use this.')
+  @commands.command(description='Only for bot owner.', brief='Only the bot owner can use this.')
   async def c(self, ctx):
 
     def check(ms):
