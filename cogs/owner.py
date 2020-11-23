@@ -12,7 +12,7 @@ class Owner(commands.Cog):
 
 
   @commands.command(aliases=['c'], description='Only for bot owner.', brief='Only the bot owner can use this.')
-  async def close(self, ctx):
+  async def c(self, ctx):
 
     def check(ms):
       return ms.channel == ctx.message.channel and ms.author == ctx.message.author
