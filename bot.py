@@ -9,7 +9,6 @@ client = commands.Bot(
   description='Main Paranoid Alpha Bot',
   case_insensitive=True,
 )
-client.remove_command('help')
 
 # TODO: SET ALL MESSAGES TO EMBEDS.
 # TODO: ERROR MESSAGES!
