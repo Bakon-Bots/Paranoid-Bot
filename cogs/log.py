@@ -9,7 +9,7 @@ class Logging(commands.Cog):
 
   @commands.Cog.listener()
   async def on_message_delete(self, message):
-    messagelog = self.client.get_channel(757793206384721950)
+    messagelog = self.client.get_channel(786730020030119938)
     deleted = discord.Embed(
         description=f"Message deleted in {message.channel.mention}", color=0x4287f5
     ).set_author(name=message.author, url=discord.Embed.Empty, icon_url=message.author.avatar_url)
@@ -20,7 +20,7 @@ class Logging(commands.Cog):
 
   @commands.Cog.listener()
   async def on_message_edit(self, before, after):
-    messagelog = self.client.get_channel(757793206384721950)
+    messagelog = self.client.get_channel(786730020030119938)
     print(before)
     print(after)
     edit = discord.Embed(
