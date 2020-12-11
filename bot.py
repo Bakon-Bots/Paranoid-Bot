@@ -3,7 +3,7 @@ from discord.ext import commands
 import os
 
 
-client = commands.Bot(
+Paranoid = commands.Bot(
   command_prefix=commands.when_mentioned_or('--'),
   owner_id=372496578499575828,
   description='Main Paranoid Alpha Bot',
@@ -15,14 +15,14 @@ client = commands.Bot(
 # TODO: ADD MORE LOGGING
 
 
-@client.event
+@Paranoid.event
 async def on_ready():
   print('Paranoid loaded!')
 
 
-@client.command(brief='Loads a certain module.')
+@Paranoid.command(brief='Loads a certain module.')
 async def load(ctx, extension):
-  client.load_extension(f'Cogs.{extension}')
+  Paranoid.load_extension(f'Cogs.{extension}')
   await ctx.send(f'Loaded "{extension}"')
 @load.error
 async def load_error(ctx, err):
@@ -30,23 +30,23 @@ async def load_error(ctx, err):
     await print('Cog is already loaded.')
   
 
-@client.command(brief='Unloads a certain module')
+@Paranoid.command(brief='Unloads a certain module')
 async def unload(ctx, extension):
-  client.unload_extension(f'Cogs.{extension}')
+  Paranoid.unload_extension(f'Cogs.{extension}')
   await ctx.send(f'Unloading "{extension}" will cause it\'s functions to be unavailable.')
   await ctx.send(f'"{extension}" already unloaded.')
   
 
-@client.command(brief='Reloads a certain module')
+@Paranoid.command(brief='Reloads a certain module')
 async def reload(ctx, extension):
-  client.unload_extension(f'Cogs.{extension}')
-  client.load_extension(f'Cogs.{extension}')
+  Paranoid.unload_extension(f'Cogs.{extension}')
+  Paranoid.load_extension(f'Cogs.{extension}')
   await ctx.send(f'Reloaded "{extension}"')  
 
 
 for filename in os.listdir('./cogs'):
   if filename.endswith('.py'):
-    client.load_extension(f'cogs.{filename[:-3]}')
+    Paranoid.load_extension(f'cogs.{filename[:-3]}')
 
 
-client.run(os.environ["TOKEN"])
+Paranoid.run(os.environ["TOKEN"])
